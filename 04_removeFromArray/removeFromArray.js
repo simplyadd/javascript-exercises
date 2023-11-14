@@ -1,7 +1,8 @@
 const removeFromArray = function(arr, ...nums) {
   for (let num of nums) {
     const i = arr.indexOf(num);
-    if (i<0) continue;
+    
+    if (i<0) continue; //skip args not in index
     else arr.splice(i, 1);
   };
 
