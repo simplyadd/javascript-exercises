@@ -1,23 +1,17 @@
-const sumAll = function(terminus, terminal) {
-  let i=terminus, sum=0;
-
-  if (terminus < 0 | terminal < 0 |
-      typeof(terminus) != 'number' |
-      typeof(terminal) != 'number') {
+const sumAll = function(min, max) {
+  if (min < 0 | max < 0 |
+      typeof(min) != 'number' |
+      typeof(max) != 'number') {
     return 'ERROR'
   } 
-  else if (terminus < terminal) {
-    while (i <= terminal) {
+  
+  if (min > max) [min, max] = [max, min];
+  let i=min, sum=0;
+  
+  while (i <= max) {
     sum += i;
     i++;
-    };
-  } 
-  else {
-    while (i >= terminal) {
-      sum += i;
-      i--;
-      };
-  }
+  };
 
   return sum;
 };
